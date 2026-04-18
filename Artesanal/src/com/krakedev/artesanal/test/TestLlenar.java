@@ -10,9 +10,7 @@ public class TestLlenar {
 		Maquina rubia = new Maquina("Pilsener", "Cerveza fría", 0.02, 8000);
 
 		rubia.imprimir();
-
 		rubia.llenarMaquina();
-
 		rubia.imprimir();
 
 		Maquina negra = new Maquina("Club", "Cerveza buena", 0.03);
