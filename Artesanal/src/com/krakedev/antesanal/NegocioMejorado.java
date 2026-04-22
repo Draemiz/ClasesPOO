@@ -19,14 +19,20 @@ public class NegocioMejorado {
 		this.maquinas = maquinas;
 	}
 
-	public String generarCodigo() {
+	public int generarCodigo() {
 		int numero = (int) (Math.random() * 100) + 1;
-		return "M-" + numero;
+		return numero;
+	}
+	
+	public String generarCodigoTexto(int codigo) {
+	    return "M-" + codigo;
 	}
 
 	public boolean agregarMaquina(String nombre, String descripcion, double precioPorML) {
 
-		String codigo = generarCodigo();
+		int codigo = generarCodigo();
+		
+		System.out.println(generarCodigoTexto(codigo));
 
 		if (recuperarMaquina(codigo) != null) {
 			return false;
@@ -45,10 +51,10 @@ public class NegocioMejorado {
 		}
 	}
 
-	public Maquina recuperarMaquina(String codigo) {
+	public Maquina recuperarMaquina(int codigo) {
 
 		for (Maquina m : maquinas) {
-			if (m.getCodigo().equals(codigo)) {
+			if (m.getCodigo() == codigo) {
 				return m;
 			}
 		}
@@ -91,7 +97,7 @@ public class NegocioMejorado {
 		return null;
 	}
 
-	public void consumirCerveza(int codCliente, String codMaquina, double cantidad) {
+	public void consumirCerveza(int codCliente, int codMaquina, double cantidad) {
 
 	    Maquina maquina = recuperarMaquina(codMaquina);
 	    Cliente cliente = buscarClientePorCodigo(codCliente);

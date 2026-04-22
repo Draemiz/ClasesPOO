@@ -7,7 +7,7 @@ public class Maquina {
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
-	private String codigo;
+	private int codigo;
 	
 	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima) {
 
@@ -29,7 +29,7 @@ public class Maquina {
 	   
 	}
 	
-	public Maquina( String codigo, String nombreCerveza, String descripcion, double precioPorMl) {
+	public Maquina( int codigo, String nombreCerveza, String descripcion, double precioPorMl) {
 
 	    this.codigo = codigo;
 		this.nombreCerveza = nombreCerveza;
@@ -40,7 +40,7 @@ public class Maquina {
 	   
 	}
 	
-	public String getCodigo() {
+	public int getCodigo() {
 	    return codigo;
 	}
 	
