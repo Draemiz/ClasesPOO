@@ -48,11 +48,13 @@ public class TestNegocioMejoradoJUnit {
         NegocioMejorado n = new NegocioMejorado();
 
         n.agregarMaquina("Pilsener", "Rubia", 0.05);
-        n.cargarMaquinas();
+        n.getMaquinas().get(0).llenarMaquina();
+
+        int codMaquina = n.getMaquinas().get(0).getCodigo();
 
         n.registrarCliente("Alex", "123");
 
-        n.consumirCerveza(1, 1, 1000);
+        n.consumirCerveza(1, codMaquina, 1000);
 
         Cliente c = n.buscarClientePorCodigo(1);
 
@@ -64,9 +66,12 @@ public class TestNegocioMejoradoJUnit {
         NegocioMejorado n = new NegocioMejorado();
 
         n.agregarMaquina("Pilsener", "Rubia", 0.05);
+
+        int codMaquina = n.getMaquinas().get(0).getCodigo();
+
         n.registrarCliente("Alex", "123");
 
-        n.consumirCerveza(1, 1, 5000);
+        n.consumirCerveza(1, codMaquina, 5000);
 
         Cliente c = n.buscarClientePorCodigo(1);
 
@@ -78,11 +83,13 @@ public class TestNegocioMejoradoJUnit {
         NegocioMejorado n = new NegocioMejorado();
 
         n.agregarMaquina("Pilsener", "Rubia", 0.05);
-        n.cargarMaquinas();
+        n.getMaquinas().get(0).llenarMaquina();
+
+        int codMaquina = n.getMaquinas().get(0).getCodigo();
 
         n.registrarCliente("Alex", "123");
 
-        n.consumirCerveza(1, 1, 1000);
+        n.consumirCerveza(1, codMaquina, 1000);
 
         double total = n.consultarValorVendido();
 
