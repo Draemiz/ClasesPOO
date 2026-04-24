@@ -28,21 +28,19 @@ public class NegocioMejorado {
 	    return "M-" + codigo;
 	}
 
-	public boolean agregarMaquina(String nombre, String descripcion, double precioPorML) {
+	public boolean agregarMaquina(String nombre, String descripcion, double precioPorMl) {
 
-		int codigo = generarCodigo();
-		
-		System.out.println(generarCodigoTexto(codigo));
+	    int codigo;
 
-		if (recuperarMaquina(codigo) != null) {
-			return false;
-		}
+	    do {
+	        codigo = generarCodigo();
+	    } while (recuperarMaquina(codigo) != null);
 
-		Maquina maquina = new Maquina(codigo, nombre, descripcion, precioPorML);
+	    Maquina maquina = new Maquina(codigo, nombre, descripcion, precioPorMl);
 
-		maquinas.add(maquina);
+	    maquinas.add(maquina);
 
-		return true;
+	    return true;
 	}
 
 	public void cargarMaquinas() {
@@ -108,7 +106,9 @@ public class NegocioMejorado {
 
 	    double valor = maquina.servirCerveza(cantidad);
 
-	    registrarConsumo(codCliente, valor);
+	    if (valor > 0) {
+	        registrarConsumo(codCliente, valor);
+	    }
 	}
 
 	public void registrarConsumo(int codigo, double valor) {
