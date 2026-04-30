@@ -3,6 +3,10 @@ package com.krakedev.antesanal;
 public class Negocio {
 	private String nombre;
 	private Maquina maquina;
+	
+	public Negocio(){
+		
+	}
 	public String getNombre() {
 		return nombre;
 	}
