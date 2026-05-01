@@ -2,28 +2,47 @@ package com.krakedev.antesanal;
 
 public class Negocio {
 	private String nombre;
-	private Maquina maquina;
-	
-	public Negocio(){
-		
+	private Maquina maquinaA;
+	private int ultimoCodigo = 100;
+
+	public Negocio() {
 	}
+
+	public Negocio(String nombre, Maquina maquinaA) {
+		this.nombre = nombre;
+		this.maquinaA = maquinaA;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public Maquina getMaquina() {
-		return maquina;
+		return maquinaA;
 	}
-	public void setMaquina(Maquina maquina) {
-		this.maquina = maquina;
-	}
-	public Negocio(String nombre, Maquina maquina) {
-		super();
-		this.nombre = nombre;
-		this.maquina = maquina;
+
+	public void setMaquina(Maquina maquinaA) {
+		this.maquinaA = maquinaA;
 	}
 	
+	public void asignarCodigoCliente(Cliente cliente) {
+		cliente.setCodigo(ultimoCodigo);
+		ultimoCodigo++;
+	}
 	
+	public void cargarMaquinaA() {
+		maquinaA.llenarMaquina();
+	}
+	
+	public void consumirCervezaMaquinaA(Cliente cliente, double ml) {
+
+		double valor = maquinaA.servirCerveza(ml);
+		
+		cliente.setTotalConsumido(
+				cliente.getTotalConsumido() + valor);
+	}
 }

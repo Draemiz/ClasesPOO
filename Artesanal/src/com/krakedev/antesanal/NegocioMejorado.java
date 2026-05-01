@@ -68,7 +68,7 @@ public class NegocioMejorado {
 
 		int codigo = ultimoCodigo;
 
-		Cliente cliente = new Cliente(codigo, nombre, cedula);
+		Cliente cliente = new Cliente(nombre, cedula);
 
 		clientes.add(cliente);
 	}

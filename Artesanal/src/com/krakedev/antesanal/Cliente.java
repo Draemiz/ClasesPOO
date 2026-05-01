@@ -7,12 +7,9 @@ public class Cliente {
     private double totalConsumido;
 
     
-    public Cliente(int codigo, String nombre, String cedula) {
-        this.codigo = codigo;
+    public Cliente(String nombre, String cedula) {
         this.nombre = nombre;
         this.cedula = cedula;
-        this.totalConsumido=0;
-        
     }
 
     // Getters y Setters
